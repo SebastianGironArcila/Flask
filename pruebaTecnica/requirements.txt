@@ -1,0 +1,6 @@
+Flask
+Flask-MySQLdb
+Flask-Cors
+Flask-Testing
+flask-sqlalchemy
+bson

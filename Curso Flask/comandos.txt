@@ -1,0 +1,36 @@
+set FLASK_APP=main.py     
+$env:FLASK_APP = "main.py" 
+
+set FLASK_DEBUG=1    
+$env:FLASK_DEBUG = "1"     
+
+set FLASK_ENV=development
+$env:FLASK_ENV = "development"
+
+pip install -r .\requirements.txt
+
+
+flask run
+flask test
+
+gcloud auth login
+gcloud auth application-default login    // para comunicarse desde  nuestro servidor local con la base de datos
+
+
+id del proyecto = platzi-flask-349218
+set GOOGLE_CLOUD_PROJECT=‘EL_ID_DE_TU_PROEYCTO’
+set GOOGLE_CLOUD_PROJECT=platzi-flask-349218
+$env:GOOGLE_CLOUD_PROJECT="platzi-flask-349218"
+
+gcloud config list // para ver todo slos proyectos
+gcloud config set project "nombre del proyecto" // para cambiar de proyecto(el nombre va sin comillas)
+gcloud app deploy app.yaml   
+gcloud app deploy app.yaml   --version   // por si desea asignar una version a su deply
+
+1.Crear archivo app.yaml —> runtime: python37
+2.Crear nuevo proyecto en gcloud para producción
+3.Cambiar el proyecto actual de gcloud : gcloud init
+4.Ejecutar el comando: gcloud app deploy app.yaml
+5.Activar firestore en gcloud
+6.Ejecutar el comando: gcloud app browse
+7. Ingresar a la ruta generada por gcloud y probar la app.
